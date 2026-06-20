@@ -1,6 +1,5 @@
-
 # Programming lang vs Technology vs Framework
----
+
 ## Q) What is a programming language ?
 
 => programming lang contains set of instructions 
