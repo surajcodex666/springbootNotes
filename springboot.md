@@ -119,3 +119,24 @@ Cloud Platforms : AWS / Azure / GCP
         e) easy deployment 
         f) no single point of failure
 
+## Types of frameworks 
+### 1) Frontend Framework : 
+                to develop user interface in the project
+                ex: Angular
+### 2) Web Frameworks :
+                to develop web layer in the project 
+                ex: Struts(Outdated)
+### 3) ORM Frameworks : 
+                to develop persistance layer in the project 
+                ex: Hibernate      
+
+a) By using Struts we can develop only Web Layer in the project (Controllers)
+b) By using hibernate we can develop only Data Access Layer (Persistence Layer)
+
+## Notes : To overcome the problems of Struts framework, Spring Framework came into market.
+
+a) Spring Framework is called as Application Development Framework
+b) By using Spring Framework we can develop end to end application
+c) Spring is free & open source framework
+d) Spring framework is developed in Modular fashion
+e) Spring framework means collection of modules
