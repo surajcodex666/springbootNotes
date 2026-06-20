@@ -128,12 +128,16 @@ Cloud Platforms : AWS / Azure / GCP
                 ex: Struts(Outdated)
 ### 3) ORM Frameworks : 
                 to develop persistance layer in the project 
-                ex: Hibernate      
+                ex: Hibernate 
+
+## Struts Disadvantages :                
 
                 a) By using Struts we can develop only Web Layer in the project (Controllers)
                 b) By using hibernate we can develop only Data Access Layer (Persistence Layer)
 
 ## Notes : To overcome the problems of Struts framework, Spring Framework came into market.
+
+## Spring Framework :
 
                 a) Spring Framework is called as Application Development Framework
                 b) By using Spring Framework we can develop end to end application
