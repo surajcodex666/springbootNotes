@@ -105,3 +105,15 @@ Database : Persistant Store
 Tools : Maven + Git Hub + Log4J + JUnit + Jenkins + SonarQube + JIRA + Docker + Kubernetes  
 
 Cloud Platforms : AWS / Azure / GCP
+
+## Architecture Types 
+### 1) Monolith Architecture 
+=> developing all requirements as one application
+=> outdated, bcz maintenance will be difficult
+=> even for small changes baar baar poora project deploy krna pdega
+=> ek functionality me change krenge to baaki functons pr bhi effect hoga
+### 2) Microservices Architecure
+=> divide and conquer
+=> divide the project into diff-diff parts 
+=> maintenance will be very easy
+
