@@ -1,7 +1,6 @@
 
 # Programming lang vs Technology vs Framework
-
-
+---
 ## Q) What is a programming language ?
 
 => programming lang contains set of instructions 
@@ -61,11 +60,10 @@ a boiler plate code / redundant code.
 
 ### NOTE - Frameworks will be developed by using Programming Language only.
 
----
-
 ## Tools :
 
 => Tools are used to automate manual work
+        
         Ex: 
                 1) Maven
                 2) JIRA
@@ -75,7 +73,6 @@ a boiler plate code / redundant code.
                 6) SONARQUBE etc....
                 
 ---
-
 # Application Architecture
 
 
