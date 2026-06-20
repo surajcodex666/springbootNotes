@@ -2,34 +2,34 @@
 
 ## Q) What is a programming language ?
 
-=> programming lang contains set of instructions 
+a) programming lang contains set of instructions 
 ex: C, C++, Java, C#
-=> Every programming language will follow set of syntaxes
-=> using programming language We can develop 
+b) Every programming language will follow set of syntaxes
+c) using programming language We can develop 
                 applications/toos/software/technologies/Framework
-=> we can develop only stand alone applications                 
+d) we can develop only stand alone applications                 
 
 
 ## Q) What is Technology?
 
-=> Technology is a software which is developed by using programming language
+a) Technology is a software which is developed by using programming language
         ex: srvlets, JSP, JDBC
-=> Technologies are used to resolve common problems/ address common requirements/to simplify our tasks
-=> By using technologies we can develop our applications    
+b) Technologies are used to resolve common problems/ address common requirements/to simplify our tasks
+c) By using technologies we can develop our applications    
 
 
 ## Q) What is Framework?
 
-=> Framework is a semi developed software
-=> It provides common logics required for application development
+a) Framework is a semi developed software
+b) It provides common logics required for application development
                 ex:
                         1) Capture form data
                         2) Validate form data
                         3) Create connection pool
                         4) DB CRUD etc.....
 
-=> It provides re-usable components
-=> For ex, every Java Developer should write below lines of code to perform DB operation
+c) It provides re-usable components
+d) For ex, every Java Developer should write below lines of code to perform DB operation
 
 Class.forName("");
 DM.getConn("");
@@ -39,16 +39,15 @@ process ResultSet()
 close connection
 
 
-### NOTE - If we are writing same code for multiple times then it is called 
-a boiler plate code / redundant code.
+### NOTE - If we are writing same code for multiple times then it is called a boiler plate code / redundant code.
 
 
-=> To avoid duplicate code/ common logic implementation, Frameworks came into picture.
+e) To avoid duplicate code/ common logic implementation, Frameworks came into picture.
 
                 Project = Business Logics + Common Logics
 
-=> Frameworks provides common logics required for the projects so that we only have to focus on only business Logic development
-=> It will improve developers productivity, can do more work in less time
+f) Frameworks provides common logics required for the projects so that we only have to focus on only business Logic development
+g) It will improve developers productivity, can do more work in less time
 
                 ex: 
                 JAVA=> Hibernate, Spring, Struts, Spring Boot
@@ -61,7 +60,7 @@ a boiler plate code / redundant code.
 
 ## Tools :
 
-=> Tools are used to automate manual work
+a) Tools are used to automate manual work
         
         Ex: 
                 1) Maven
@@ -108,12 +107,15 @@ Cloud Platforms : AWS / Azure / GCP
 
 ## Architecture Types 
 ### 1) Monolith Architecture 
-=> developing all requirements as one application
-=> outdated, bcz maintenance will be difficult
-=> even for small changes baar baar poora project deploy krna pdega
-=> ek functionality me change krenge to baaki functons pr bhi effect hoga
+a) developing all requirements as one application
+b) outdated, bcz maintenance will be difficult
+c) even for small changes baar baar poora project deploy krna pdega
+d) ek functionality me change krenge to baaki functons pr bhi effect hoga
 ### 2) Microservices Architecure
-=> divide and conquer
-=> divide the project into diff-diff parts 
-=> maintenance will be very easy
+a) divide and conquer
+b) divide the project into diff-diff parts 
+c) maintenance will be very easy
+d) loosely coupled APIs
+e) easy deployment 
+f) no single point of failure
 
