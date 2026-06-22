@@ -223,4 +223,32 @@ Cloud Platforms : AWS / Azure / GCP
                 f) Distribuited Messaging 
                 g) Routing
 
-## 10) Spring Test : It provides Unit Test framework                
+## 10) Spring Test : It provides Unit Test framework  
+
+# Spring core
+
+                a) Spring core module is all about managing dependencies among the classes with loosely coupling
+                b) In project we will develop several classes. All those classes we can categorize into 3 types -
+                        1) POJO
+                        2) Java Bean
+                        3) Component
+
+## What is POJO? (Plain Old Java Object)
+=> Any Java class which can be compiled by using only JDK software is called a POJO class   
+
+                ex1: Below class is a valid pojo
+                class Demo{
+                        int id;
+                        String name;
+                }
+
+                ex2:
+                class Demo2 extends Thread{
+                        int id;
+                        String name;
+                }
+
+                ex3:
+                class Demo3 implememts Runnable{
+                        // run method 
+                }
