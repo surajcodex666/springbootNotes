@@ -252,4 +252,3 @@ Cloud Platforms : AWS / Azure / GCP
                 class Demo3 implememts Runnable{
                         // run method 
                 } 
-                
