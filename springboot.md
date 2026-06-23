@@ -233,7 +233,7 @@ Cloud Platforms : AWS / Azure / GCP
                         2) Java Bean
                         3) Component
 
-## What is POJO? (Plain Old Java Object)
+## Q) What is POJO? (Plain Old Java Object)
 => Any Java class which can be compiled by using only JDK software is called a POJO class   
 
                 ex1: Below class is a valid pojo
@@ -252,3 +252,46 @@ Cloud Platforms : AWS / Azure / GCP
                 class Demo3 implememts Runnable{
                         // run method 
                 } 
+                ex4: not POJO
+                class Demon4 implememnts Servlet{ (//part of JEE)
+                        //run method
+                }
+
+## Q) What is Java Bean ?
+ => Any Java class which follows bean specification rules is called as Java beans.
+
+                1) CLass should implememnt serializable interface
+                2) Class should have private data members(variables)
+                3) Every private should have public getter and setter method
+                4) Class should have zero-param constructor
+
+### NOTE : Bean classes are used to write business logic and to store and retrieve data.
+
+## Q) What is component?
+=> The java class which contains business logic is called as component class.
+
+                ex: Controllers, Service, DAO classes
+                => Controller classes will have logic to deal with Request & Response
+                => Service class will have business logic 
+                        ex: Generate OTP ,Send OTP, Send Email, Encrypt & DEcrypt Passwords etc
+                => DAO Clasees will contain the logic to communicate with database  
+
+---
+=> In a project we will develop multiple classes and those classes will be dependent on other classes.
+
+        ex: 
+                a) Controller class will call service class methods
+                b) Service class will call DAO class methods
+
+=> In java one class can talk to another class in two ways
+
+                1) Inheritance (IS-A) [when we extend the class to use a method]  
+                        [not recommended bcz we cant extend another classes as in inheritance the classes are tightly coupled and if we change a method in one class it might effect the another thats why they are tightly coupled]      
+                2) Composition (HAS-A) [when we create the object for using the method] 
+                        [not recommended bcz if they change the constructor of the engine class it will fail during compilation] 
+                        
+                        like before it was Engine() and we changed the constructors to Engine(break, fuel)
+
+                        so if we have created 
+                        Engine eng = new Engine();
+                        (it'll fail)
