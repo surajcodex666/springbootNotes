@@ -298,5 +298,29 @@ Cloud Platforms : AWS / Azure / GCP
 
                         
 ### Always we need to develop our classes with loosely coupling
-- loosely coupling means without creating object and without inheriting properties we should be able to access one class methods in another class
-- If we make any changes in engine class then Car class should not be effected
+- loosely coupling means without creating object and without inheriting properties we should be able to access one class methods in another class.
+- If we make any changes in engine class then Car class should not be effected then we can say our classes are loosely coupled.
+
+### To develop classes with loosely coupling we need to use INTERFACE
+
+## -> Note - A NullPointerException is a runtime exception that occurs when a program attempts to access or invoke a method, field, or operation on an object reference that is null. It is one of the most common exceptions in Java.
+
+        ex: 
+        public class Car{
+                private IEngine eng;
+
+                public Car(IEngine eng){ //created constructor so that who ever wants can initialise their own type of engine.
+                        this.eng = eng;
+                }
+
+                public void drive(){ // in order to use the drive method it is the the instance method and to use the instance we have to create the object of car
+                        int start = eng.start(); //null pointer exception so we'have created a constructor
+
+                        if(start>= 1){
+                                sout("journey started..");
+                        }else{
+                                sout("engine in trouble");
+                        }
+                }
+        }
+
