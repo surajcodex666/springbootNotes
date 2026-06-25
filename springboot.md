@@ -355,7 +355,8 @@ In Spring, the **Spring Container** creates and injects these dependencies autom
 
 ### NOTE - If we use both setter and constructor injection together so first the CI will initialize the value and then the SI will again initialize it therefore the setter Injection will @Override the constructor Injection
 
-        3) Field Injection - Injecting dependent object into target class using target class variable is call as Field Injection 
+        3) Field Injection - Injecting dependent object into target class using target class variable is call as Field Injection
+        - To perform Field Injection we are using Reflection API 
 
                 public class Car{
                         private IEngine eng; //we can only use private methods inside the class and not outside of it
@@ -365,8 +366,11 @@ In Spring, the **Spring Container** creates and injects these dependencies autom
                         }
                 }
 
+
+                NOTE - WE CAN ACCESS PRIVATE VARIABLE OUTSIDE OF CLASS USING REFLECTION API LIKE BELOW
+
                 //in main class
-                publiv vlass Main{
+                publiv class Main{
                         public static void main(String[] args) throws exception{
                                 Class<?> clz = Class.forName("packqage.Car") //loading the class
 
