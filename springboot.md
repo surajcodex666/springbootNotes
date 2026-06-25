@@ -329,9 +329,10 @@ Cloud Platforms : AWS / Azure / GCP
 - Dependency Injection is a design pattern where the objects that a class needs (dependencies) are provided from outside instead of the class creating them itself.
 In Spring, the **Spring Container** creates and injects these dependencies automatically.
 - We can perform DI in 3 ways -
+
         1) Setter Injection - write the setter method for the variable(private IEngine eng;)
         - Setter injection means , Injecting dependent object in target object using the class setter method
-        
+
                 //Setter
                 public void setEng(IEngine eng){
                         this.eng = eng;
