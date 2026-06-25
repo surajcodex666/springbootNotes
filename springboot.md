@@ -295,3 +295,8 @@ Cloud Platforms : AWS / Azure / GCP
                         so if we have created 
                         Engine eng = new Engine();
                         (it'll fail)
+
+                        
+### Always we need to develop our classes with loosely coupling
+- loosely coupling means without creating object and without inheriting properties we should be able to access one class methods in another class
+- If we make any changes in engine class then Car class should not be effected
