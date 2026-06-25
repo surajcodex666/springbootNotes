@@ -338,10 +338,47 @@ In Spring, the **Spring Container** creates and injects these dependencies autom
                         this.eng = eng;
                 }
 
+                // how to call in main class
+                Car car = new Car() //using the zero-param constructor to make the object of the class bcz we cannot perform the setter injection without creating the object of the car class
+                car.setEng(new PetrolEngine());
+
         2) Constructor Injection - write the constructor for the class and give the object on which our class is dependent inside the parameter
+        - Injecting dependent object into target object using target class constructor
 
                 //Constructor
                 public Car(IEngine eng){
                         this.eng = eng;
-                }                        
-        3) Field Injection
+                } 
+
+                //how to call in main class
+                Car car = new Car(new DieselEngine());
+
+### NOTE - If we use both setter and constructor injection together so first the CI will initialize the value and then the SI will again initialize it therefore the setter Injection will @Override the constructor Injection
+
+        3) Field Injection - Injecting dependent object into target class using target class variable is call as Field Injection 
+
+                public class Car{
+                        private IEngine eng; //we can only use private methods inside the class and not outside of it
+
+                        public void drive(){
+                                //code
+                        }
+                }
+
+                //in main class
+                publiv vlass Main{
+                        public static void main(String[] args) throws exception{
+                                Class<?> clz = Class.forName("packqage.Car") //loading the class
+
+                                Field engField = clz.getDeclaredField("eng"); //load the field whose name is "eng"(field object)
+                                engField.setAccessible(true);(can be used even outside the class now)
+
+                                Object object = clz.newInstance(); //whatever the class we have loaded we are creating the object for that class
+
+                                Car carObje = (Car) object; //whatever obj we have created using neInstance() method we are type-casting that into Car class object
+
+                                engField.set(carObj, new DieselEngine()); //Injecting value to variable
+
+                                carObje.drive()
+                        }
+                }
