@@ -307,7 +307,7 @@ Cloud Platforms : AWS / Azure / GCP
 
         ex: 
         public class Car{
-                private IEngine eng;
+                private IEngine eng; //IEngine is a interface and we are taking it as reference variable
 
                 public Car(IEngine eng){ //created constructor so that who ever wants can initialise their own type of engine.
                         this.eng = eng;
@@ -324,3 +324,23 @@ Cloud Platforms : AWS / Azure / GCP
                 }
         }
 
+## Q) What is Dependency Injection?
+- The process of injecting one class object into another class is call as "Dependency Injection"
+- Dependency Injection is a design pattern where the objects that a class needs (dependencies) are provided from outside instead of the class creating them itself.
+In Spring, the **Spring Container** creates and injects these dependencies automatically.
+- We can perform DI in 3 ways -
+        1) Setter Injection - write the setter method for the variable(private IEngine eng;)
+        - Setter injection means , Injecting dependent object in target object using the class setter method
+        
+                //Setter
+                public void setEng(IEngine eng){
+                        this.eng = eng;
+                }
+
+        2) Constructor Injection - write the constructor for the class and give the object on which our class is dependent inside the parameter
+
+                //Constructor
+                public Car(IEngine eng){
+                        this.eng = eng;
+                }                        
+        3) Field Injection
