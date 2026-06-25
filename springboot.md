@@ -303,7 +303,7 @@ Cloud Platforms : AWS / Azure / GCP
 
 ### To develop classes with loosely coupling we need to use INTERFACE
 
-## -> Note - A NullPointerException is a runtime exception that occurs when a program attempts to access or invoke a method, field, or operation on an object reference that is null. It is one of the most common exceptions in Java.
+#### -> Note - A NullPointerException is a runtime exception that occurs when a program attempts to access or invoke a method, field, or operation on an object reference that is null. It is one of the most common exceptions in Java.
 
         ex: 
         public class Car{
