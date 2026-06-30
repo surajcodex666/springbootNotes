@@ -353,7 +353,7 @@ In Spring, the **Spring Container** creates and injects these dependencies autom
                 //how to call in main class
                 Car car = new Car(new DieselEngine());
 
-### NOTE - If we use both setter and constructor injection together so first the CI will initialize the value and then the SI will again initialize it therefore the setter Injection will @Override the constructor Injection
+### NOTE - If we use both setter and constructor injection together so first the CI will initialize the value and then the SI will again initialize it therefore "the setter Injection will @Override the constructor Injection"
 
         3) Field Injection - Injecting dependent object into target class using target class variable is call as Field Injection
         - To perform Field Injection we are using Reflection API 
@@ -386,3 +386,295 @@ In Spring, the **Spring Container** creates and injects these dependencies autom
                                 carObje.drive()
                         }
                 }
+
+## Q) IOC Container 
+- Inversion of control
+- IOC is responsible for Dependency Injection in Spring Application
+- Dependency Injection means creating and injecting dependent bean objects into target bean classes.
+- We need to provide "Java classes + Beans Confirguration" as input for IOC then IOC will perform DI and provides spring beans which are ready to use
+### NOTE - IOC Container will manage life cycle of Spring Beans
+
+## Q) What is Spring Bean?
+- Any java class whose life cycle(creation to destruction) is managed by IOC Container is called as Spring Bean.
+- We can represent Java Class as Spring Bean in 2 ways
+
+        1) XML Approach (Outdated) (Springboot doesn't support XML approach but spring supports both)
+                ex: <bean id = "id1" class = "pkg.ClassName" />
+        2) Annotation Approch (Recommended)
+                ex: @Component, @Service, @Repository etc...
+
+## Q) How to start IOC in spring?
+1) BeanFactory (outdated)
+2) ApplicationContext(recommended)
+
+                ex: ApplicationContext contex = new ClassPathXmlApplicationContext(String configFile);
+
+### NOTE - Bean Configuration file contains bean definition
+- Bean definitions - target class, dependent class, dependency Injection type
+
+### NOTE - When IOC Container started it will read bean definitions from Bean configuration File and it will perform Dependency Injection 
+
+# First Application Development using spring core module
+- Pre-requesites : JDK 1.8v, STS IDE
+1) Create Maven project in IDE
+2) Add spring Core Dependency in pom.xml file (www.mvnrepository.com)
+3) Create Required Java Classes
+4) Create Bean Configuration File and configure Bean Definitions
+5) Create Main class and start IOC Container to test the application.  
+---
+# SHORT NOTES 1
+---
+# Spring Core - Short Notes
+
+## 1. What is Spring Bean?
+
+### Definition
+A Spring Bean is an object created, managed, and maintained by the Spring IoC Container.
+
+### Key Points
+- Normal Java object (POJO).
+- Created by Spring, not manually using `new`.
+- Lifecycle managed by Spring.
+- Used for Dependency Injection (DI).
+
+### Example
+```java
+@Component
+public class StudentService {
+}
+```
+
+`StudentService` becomes a Spring Bean.
+
+---
+
+## 2. How to Represent a Java Class as a Spring Bean
+
+### Using Stereotype Annotations
+```java
+@Component
+public class StudentService {
+}
+```
+
+Other common annotations:
+- `@Component` → Generic Bean
+- `@Service` → Business Logic Layer
+- `@Repository` → Persistence Layer
+- `@Controller` / `@RestController` → Web Layer
+
+### Using @Bean Annotation
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public StudentService studentService() {
+        return new StudentService();
+    }
+}
+```
+
+### Important Points
+- Spring scans classes and registers them as Beans.
+- Bean names are unique within the container.
+
+---
+
+## 3. What is IoC (Inversion of Control) Container?
+
+### Definition
+IoC Container is the core component of Spring that creates, manages, and injects Spring Beans.
+
+### Responsibilities
+- Creates Beans
+- Stores Beans
+- Injects Dependencies
+- Manages Bean Lifecycle
+
+### Real-Life Analogy
+Without Spring:
+```java
+StudentService service = new StudentService();
+```
+
+With Spring:
+```java
+@Autowired
+private StudentService service;
+```
+
+Spring creates and provides the object.
+
+### Types
+1. BeanFactory
+2. ApplicationContext (Most commonly used)
+
+---
+
+## 4. What is Bean Configuration File?
+
+### Definition
+A configuration file tells Spring:
+- Which Beans to create
+- How Beans are connected
+- Bean properties and dependencies
+
+### XML Configuration Example
+```xml
+<bean id="studentService"
+      class="com.example.StudentService"/>
+```
+
+### Java Configuration Example
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public StudentService studentService() {
+        return new StudentService();
+    }
+}
+```
+
+### Modern Spring Boot
+Mostly uses:
+- Annotations
+- Auto Configuration
+- Component Scanning
+
+XML is rarely used.
+
+---
+
+## 5. How to Start IoC Container
+
+### Using ApplicationContext
+
+```java
+ApplicationContext context =
+        new ClassPathXmlApplicationContext("beans.xml");
+```
+
+### Get Bean
+
+```java
+StudentService service =
+        context.getBean(StudentService.class);
+```
+
+### Spring Boot
+
+```java
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+`SpringApplication.run()` starts the IoC Container.
+
+### Important Point
+- Container starts first.
+- Beans are created and registered.
+- Application becomes ready to serve requests.
+
+---
+
+## 6. First Application Development Using Spring Core Module
+
+### Steps
+
+#### Step 1: Create POJO
+
+```java
+public class Student {
+
+    public void study() {
+        System.out.println("Studying...");
+    }
+}
+```
+
+#### Step 2: Configure Bean
+
+```xml
+<bean id="student"
+      class="com.example.Student"/>
+```
+
+#### Step 3: Start Container
+
+```java
+ApplicationContext context =
+        new ClassPathXmlApplicationContext("beans.xml");
+```
+
+#### Step 4: Get Bean
+
+```java
+Student student =
+        context.getBean(Student.class);
+```
+
+#### Step 5: Use Bean
+
+```java
+student.study();
+```
+
+### Flow
+
+Application Start
+→ IoC Container Starts
+→ Bean Created
+→ Bean Stored
+→ Bean Retrieved
+→ Business Method Called
+
+---
+
+# Interview Revision Sheet
+
+### Q1. What is a Spring Bean?
+A Java object managed by the Spring IoC Container.
+
+### Q2. What is IoC?
+Control of object creation is transferred from the programmer to Spring.
+
+### Q3. What is Dependency Injection?
+Spring injects required dependencies automatically.
+
+### Q4. Difference Between BeanFactory and ApplicationContext?
+- BeanFactory → Basic container
+- ApplicationContext → Advanced container (recommended)
+
+### Q5. Which method starts Spring Boot?
+```java
+SpringApplication.run();
+```
+
+### Q6. Which annotation creates a Bean?
+- `@Component`
+- `@Service`
+- `@Repository`
+- `@Controller`
+- `@Bean`
+
+---
+
+# Quick Revision (1 Minute)
+
+- Bean = Object managed by Spring.
+- IoC Container = Creates and manages Beans.
+- Dependency Injection = Spring provides required objects.
+- ApplicationContext = Popular IoC Container.
+- Bean Configuration = Defines Bean creation.
+- Spring Boot starts IoC using `SpringApplication.run()`.
+- `@Component`, `@Service`, `@Repository`, `@Controller` create Beans.
+
+
